@@ -77,49 +77,49 @@ client = AutoShardedClient(
 all_emojis = [emj for emj in emoji.EMOJI_DATA]
 
 
-#db = TinyDB('db.json')
-invites_table_db = TinyDB('invites_table_db.json')
+#db = TinyDB('bots/trannyverse/db.json')
+invites_table_db = TinyDB('bots/trannyverse/invites_table_db.json')
 invites_table = invites_table_db.table('invites')
 
-ban_table_db = TinyDB('ban_table_db.json')
+ban_table_db = TinyDB('bots/trannyverse/ban_table_db.json')
 ban_table = ban_table_db.table("bans")
 BAN_LIMIT = 2  # Max bans allowed in the timeframe
 TIME_FRAME = 21600  # Timeframe in seconds
 
-diva_mute_table_db = TinyDB('diva_mute_table_db.json')
+diva_mute_table_db = TinyDB('bots/trannyverse/diva_mute_table_db.json')
 diva_mute_table = diva_mute_table_db.table("diva_mute")
 DIVA_DAILTY_MUTE_LIMIT = 8  # Max of 2-hour mutes allowed in a day
 # DIVA_MUTE_TIME_FRAME = 86400  # should be 24 hours
 
-# db = TinyDB('db.json')
-sensitive_invites_db = TinyDB('sensitive_invites_db.json')
+# db = TinyDB('bots/trannyverse/db.json')
+sensitive_invites_db = TinyDB('bots/trannyverse/sensitive_invites_db.json')
 sensitive_invites = sensitive_invites_db.table('sensitive_invites')
 
-forced_nicknames_table_db = TinyDB('forced_nicknames_table_db.json')
+forced_nicknames_table_db = TinyDB('bots/trannyverse/forced_nicknames_table_db.json')
 forced_nicknames_table = forced_nicknames_table_db.table('forced_nicknames')
 
-slowed_members_table_db = TinyDB('slowed_members_table_db.json')
+slowed_members_table_db = TinyDB('bots/trannyverse/slowed_members_table_db.json')
 slowed_members_table = slowed_members_table_db.table('slowed_members')
 
-activity_log_table_db = TinyDB('activity_log_table_db.json')
+activity_log_table_db = TinyDB('bots/trannyverse/activity_log_table_db.json')
 activity_log_table = activity_log_table_db.table('activity_log')
 
-doomers_table_db = TinyDB('doomers_table_db.json')
+doomers_table_db = TinyDB('bots/trannyverse/doomers_table_db.json')
 doomers_table = doomers_table_db.table('doomers')
 
-gagged_table_db = TinyDB('gagged_table_db.json')
+gagged_table_db = TinyDB('bots/trannyverse/gagged_table_db.json')
 gagged_table = gagged_table_db.table('gagged')
 
-forced_gender_table_db = TinyDB('forced_gender_table_db.json')
+forced_gender_table_db = TinyDB('bots/trannyverse/forced_gender_table_db.json')
 forced_gender_table = forced_gender_table_db.table('forced_gender')
 
-member_roles_table_db = TinyDB('member_roles_table_db.json')
+member_roles_table_db = TinyDB('bots/trannyverse/member_roles_table_db.json')
 member_roles_table = member_roles_table_db.table('member_roles')  # log member roles in case of leaves
 
-deathmatch_table_db = TinyDB('deathmatch_table_db.json')
+deathmatch_table_db = TinyDB('bots/trannyverse/deathmatch_table_db.json')
 deathmatch_table = deathmatch_table_db.table('deathmatch')  # logging deathmatches
 
-spammers_table_tb = TinyDB('spammers_table_tb.json')
+spammers_table_tb = TinyDB('bots/trannyverse/spammers_table_tb.json')
 spammers_table = spammers_table_tb.table('spammers')  # logging spammers
 
 # highlights_table and message_replies moved to SQLite via db module
