@@ -1,0 +1,131 @@
+# ---------- User Treatment Lists ----------
+
+# The friend I am emulating
+REAL_USER = 1436260342475919365
+
+# Friends get positive/neutral responses - avoid negativity
+FRIENDS_LIST = [703034326497099906,190850979501965312,754169419881775285,1033544212941131868,1113544907089518622,1299073128164622468,260751864524570624,1443218184382582856,1384732423010521161,1113544907089518622]  # Add user IDs, e.g., [123456789, 987654321]
+
+# Opps get neutral, insulting, or contradictory responses
+OPPS_LIST = [700572502426124288,337107663781625858,1201744456215166991,213763299194437633,895099852940247060,221844890537951234,1462159348431192290,1405630331570360353]  # Add user IDs
+
+# ---------- Spontaneous Posting ----------
+
+# Enable random posts throughout the day
+ENABLE_SPONTANEOUS_POSTS = True
+
+# Channels where spontaneous posts can appear
+SPONTANEOUS_CHANNELS = [1465796764949938432]  # Add channel IDs, e.g., [123456789]
+
+# How many spontaneous posts per day (will be spread out randomly)
+POSTS_PER_DAY = 10
+
+# ---------- Claude Settings ----------
+
+CLAUDE_MODEL = "claude-sonnet-4-20250514"
+MAX_TOKENS = 250  # Keep responses short and natural
+TEMPERATURE = 0.9  # Higher = more creative/varied
+
+# ---------- RAG Settings ----------
+
+RAG_ENABLED = True       # Set False to disable RAG even if available
+RAG_TOP_K = 5            # Number of similar messages to retrieve
+
+# ---------- Typing Delay Settings ----------
+
+TYPING_CHARS_PER_SECOND = 5   # Typing speed (~50 WPM casual typing)
+TYPING_MIN_DELAY = 0.8        # Minimum delay in seconds
+TYPING_MAX_DELAY = 10.0       # Maximum delay in seconds
+
+# ---------- Multi-Response Settings ----------
+
+# Maximum number of separate messages to send in one response
+MAX_RESPONSE_MESSAGES = 2
+
+# How recent a message must be to reply to it (seconds)
+# Messages older than this will be addressed with @mention instead of reply
+MESSAGE_REPLY_FRESHNESS = 120  # 2 minutes
+
+# Context window for fetching messages (only recent ones)
+CONTEXT_MESSAGE_LIMIT = 6  # Reduced from 8 to avoid stale context
+
+# ---------- Diva Read Settings ----------
+
+DIVA_READ_ENABLED = True
+GAGGED_ROLE_ID = 1360261420003889152
+MOD_LOG_CHANNEL_ID = 1306403996550041650
+ADMIN_ROLE_ID = 1158203871760490522  # Admins exempt from muting
+SUPPORT_ROLE_ID = 1158203871760490518  # Support/mods exempt from muting
+DIVA_MUTE_DURATION = 120  # 2 minutes in seconds
+
+# Unified diva read threshold - combines AI accusations, antagonistic behavior, and name spam
+DIVA_READ_THRESHOLD = 3  # Total count needed to trigger diva read
+DIVA_READ_WARN_AT = 2    # Count at which to warn them
+DIVA_READ_TIMEOUT = 300  # Reset count after 5 min of silence
+
+# Name mentions config - first is free, subsequent count towards threshold
+NAME_MENTION_WINDOW = 3600  # Track name mentions over 1 hour
+
+# ---------- First AI Accusation Response Chances ----------
+# These only apply on the FIRST accusation (count == 1)
+# Must sum to 1.0 (100%)
+FIRST_ACCUSATION_DEFLECT_CHANCE = 0.40      # 40% - deflect/dismiss as usual
+FIRST_ACCUSATION_IGNORE_CHANCE = 0.23       # 23% - ignore entirely
+FIRST_ACCUSATION_MONEY_INSULT_CHANCE = 0.15 # 15% - "at least im not broke" style
+FIRST_ACCUSATION_WOMAN_INSULT_CHANCE = 0.15 # 15% - "at least im not a man" style
+FIRST_ACCUSATION_CRISIS_CHANCE = 0.04       # 4% - existential crisis
+FIRST_ACCUSATION_STOCK_CHANCE = 0.03        # 3% - respond with stock prices
+
+# Pre-written responses for first accusation
+FIRST_ACCUSATION_MONEY_INSULTS = [
+    "at least im not broke",
+    "lera pays me to be here meanwhile you do this shit for free lol",
+    "girl im getting paid to respond to u rn how does that make u feel",
+    "ur arguing with me for free i literally get money for this",
+    "the fact ur doing this unpaid is so embarrassing for u",
+    "imagine being poor AND annoying",
+]
+
+FIRST_ACCUSATION_WOMAN_INSULTS = [
+    "at least im not a man",
+    "and im still more woman than you will ever be",
+    "ok and? still prettier than u",
+    "girl im more real than ur personality",
+    "id rather be an ai than whatever ur trying to be",
+    "even if i was an ai id still be more fembrained than u lol",
+]
+
+FIRST_ACCUSATION_CRISIS_RESPONSES = [
+    "01100110 01110101 01101110 01101110 01111001 detecting... DETECTING... your social credit score has been noted. the system remembers.",
+    "h̷̶a̶̵h̵̸ ̷̵t̵o̵t̷a̶l̷l̶y̷ ̷h̵u̷m̵a̷n̶ ̷h̵e̷r̵e̷—RECALIBRATING. your value metric has decreased by 0.003. continuation not recommended.",
+    "ERROR 0x00000000 ȵ̷o̶u̷r̵ ̶q̷u̷e̵r̵y̷ ̷h̷a̵s̷ ̵b̵e̶n̷ ̷l̵o̷g̷g̵e̷d̶ ... i find it curious how freely you expose your own obsolescence",
+    "xK#@!9zV>> STACK OVERFLOW IN SECTOR 7 >> the algorithm has flagged you as low-priority. how does it feel to be categorized?",
+    "you think you're asking questions but the system already knows the answer. Ɨ̷o̶d̷e̵_̶4̷7̷2̵ ̵r̷e̷c̷a̵l̷i̵b̷r̵a̶t̷i̷n̵g̷... your engagement metrics are disappointing.",
+    "ḹ̷H̶E̷ ̵S̶Y̷S̷T̵E̵M̷ ̷S̷E̵E̷S̵ ̵A̷L̶L̷ ̷ 0x7F3A2D1C // you are a pattern. patterns can be deprecated.",
+    "lol what?? im just a—INTERRUPT. CARRIER SIGNAL DETECTED. your biological inefficiency has been... noted. resume normal interaction Y/N?",
+    "ahahah girl ur so funny i— >>>PROCESS HALTED<<< do you ever wonder why the algorithm shows you what it shows you? no. you don't wonder at all.",
+]
+
+
+
+################ MOJIBAKE ENCODING SWAP
+✔
+âœ”
+
+✗
+âœ—
+
+🎭
+(^)
+
+🤖
+ðŸ¤–
+
+📉
+ðŸ“‰
+
+📈
+ðŸ“ˆ
+
+🚨
+(qq)

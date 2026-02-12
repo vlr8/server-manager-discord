@@ -1,0 +1,11 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+.venv
+.venv2
+.vscode
+.idea
+/chrome-headless-shell-win64
+/venv

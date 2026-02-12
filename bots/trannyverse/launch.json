@@ -1,0 +1,30 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Instagram Monitor",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/instagram_monitor.py",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "Python: Instagram Monitor (Debug Mode)",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/instagram_monitor_debug.py",
+            "args": ["--debug"],
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "Debug Instagram Module",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/instagram/instagram.py",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        }
+    ]
+}

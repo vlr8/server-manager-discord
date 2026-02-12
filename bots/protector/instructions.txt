@@ -1,0 +1,21 @@
+Add these to your bot python file imports section:
+
+IMPORTS_TO_ADD = '''
+# Content moderation system
+import moderation_db as mdb
+from content_analyzer import get_analyzer
+from live_monitor import setup_live_monitor
+from live_monitor import (
+    monitor_add_cmd, monitor_remove_cmd, monitor_list_cmd,
+    badword_add_cmd, badword_list_cmd, modstats_cmd, reload_filter_cmd
+)
+'''
+
+# Add this to your on_startup function:
+
+STARTUP_CODE = '''
+    # Initialize content moderation
+    mdb.init_moderation_db()
+    setup_live_monitor(client)
+    logger.info("Content moderation system initialized")
+'''

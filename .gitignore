@@ -1,3 +1,52 @@
+# === Python ===
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+dist/
+build/
+venv/
+.venv/
+
+# === Databases (live on persistent volume, never in git) ===
+data/*.db
+data/*.db-wal
+data/*.db-shm
+data/chroma_db/
+
+# === Raw Discord exports (large JSON files) ===
+data/server_export/
+
+# === Bot state and secrets ===
+.env
+.bot_state
+*.pid
+bot.pid
+
+# === Logs ===
+*.log
+
+# === Model cache (sentence-transformers, CLIP, etc.) ===
+cache/
+.cache/
+
+# === IDE ===
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# === OS ===
+.DS_Store
+Thumbs.db
+
+# === Misc large files ===
+*.db-journal
+chatbot_data/
+
+
+# Default Python ignores
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]

@@ -1,0 +1,55 @@
+[project]
+name = "server-apps"
+version = "1.0.0"
+description = "Discord bot ecosystem: persona chatbot, analytics, and moderation"
+requires-python = ">=3.11"
+
+# Core dependencies shared by all 3 bots
+dependencies = [
+    "aiohttp>=3.9",
+    "discord-py-interactions>=5.0",
+]
+
+[project.optional-dependencies]
+# Persona bot: RAG pipeline (runs on CPU for Railway, GPU locally)
+rag = [
+    "sentence-transformers>=2.2",
+    "chromadb>=0.4",
+    "anthropic>=0.40",
+]
+
+# Persona bot: Vision pipeline (LOCAL ONLY - needs GPU)
+vision = [
+    "clip-interrogator>=0.6",
+    "Pillow>=10.0",
+    "transformers>=4.30",
+]
+
+# Protector bot: Content analysis
+moderation = [
+    "vaderSentiment>=3.3",
+]
+
+# Streaming import for large Discord JSON exports (>100MB)
+streaming = [
+    "ijson>=3.2",
+]
+
+# Development tools
+dev = [
+    "pytest>=7.0",
+    "black>=23.0",
+    "ruff>=0.1",
+]
+
+# Install everything (local dev with GPU)
+all = [
+    "server-apps[rag,vision,moderation,streaming,dev]",
+]
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[tool.setuptools.packages.find]
+include = ["common*", "rag*", "vision*", "bots*", "scripts*"]

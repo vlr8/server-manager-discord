@@ -1,0 +1,217 @@
+{
+  "total_messages": 14986,
+  "content_messages": 13371,
+  "avg_length_chars": 47.27574601750056,
+  "avg_length_words": 9.116894772268342,
+  "median_length_chars": 32,
+  "uses_caps_frequently": false,
+  "uses_lowercase": true,
+  "uses_punctuation": false,
+  "emoji_frequency": 0.05302520379926707,
+  "question_frequency": 0.02460548949218458,
+  "exclamation_frequency": 0.011293097000972254,
+  "common_bigrams": [
+    [
+      "in the",
+      227
+    ],
+    [
+      "to be",
+      203
+    ],
+    [
+      "a lot",
+      196
+    ],
+    [
+      "i was",
+      195
+    ],
+    [
+      "i don\u2019t",
+      175
+    ],
+    [
+      "like a",
+      175
+    ],
+    [
+      "of the",
+      172
+    ],
+    [
+      "as a",
+      162
+    ],
+    [
+      "i think",
+      148
+    ],
+    [
+      "lot of",
+      139
+    ],
+    [
+      "and i",
+      127
+    ],
+    [
+      "it was",
+      120
+    ],
+    [
+      "on the",
+      115
+    ],
+    [
+      "is a",
+      111
+    ],
+    [
+      "i have",
+      109
+    ],
+    [
+      "in a",
+      107
+    ],
+    [
+      "be a",
+      106
+    ],
+    [
+      "the same",
+      105
+    ],
+    [
+      "want to",
+      100
+    ],
+    [
+      "have to",
+      100
+    ]
+  ],
+  "vocabulary": [
+    [
+      "it\u2019s",
+      663
+    ],
+    [
+      "don\u2019t",
+      534
+    ],
+    [
+      "yeah",
+      533
+    ],
+    [
+      "get",
+      429
+    ],
+    [
+      "one",
+      399
+    ],
+    [
+      "more",
+      392
+    ],
+    [
+      "even",
+      384
+    ],
+    [
+      "out",
+      353
+    ],
+    [
+      "about",
+      342
+    ],
+    [
+      "i\u2019m",
+      337
+    ],
+    [
+      "people",
+      337
+    ],
+    [
+      "trans",
+      331
+    ],
+    [
+      "that\u2019s",
+      314
+    ],
+    [
+      "some",
+      310
+    ],
+    [
+      "think",
+      297
+    ],
+    [
+      "then",
+      296
+    ],
+    [
+      "being",
+      289
+    ],
+    [
+      "most",
+      282
+    ],
+    [
+      "only",
+      274
+    ],
+    [
+      "how",
+      270
+    ],
+    [
+      "too",
+      260
+    ],
+    [
+      "actually",
+      257
+    ],
+    [
+      "why",
+      247
+    ],
+    [
+      "make",
+      238
+    ],
+    [
+      "than",
+      233
+    ],
+    [
+      "really",
+      224
+    ],
+    [
+      "now",
+      221
+    ],
+    [
+      "cuz",
+      218
+    ],
+    [
+      "look",
+      214
+    ],
+    [
+      "lot",
+      210
+    ]
+  ]
+}
