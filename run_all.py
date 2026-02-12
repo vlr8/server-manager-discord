@@ -37,6 +37,41 @@ RESTART_DELAY = 10
 processes: dict[str, subprocess.Popen] = {}
 shutting_down = False
 
+import urllib.request
+import subprocess
+
+data_dir = os.environ.get("DATA_DIR", "data")
+os.makedirs(data_dir, exist_ok=True)
+
+seeds = {
+    "DB_SEED_URL": ("discord_analytics.db.xz", True),    # needs decompression
+    "MODERATION_DB_SEED_URL": ("moderation.db", False),
+    "CHROMA_SEED_URL": ("chroma_db.tar.xz", True),       # needs extraction
+}
+
+for env_key, (filename, needs_extract) in seeds.items():
+    url = os.environ.get(env_key)
+    dest = os.path.join(data_dir, filename)
+    final = dest.replace(".xz", "").replace(".tar", "")
+
+    if not url or os.path.exists(final):
+        continue
+
+    logger.info(f"Downloading {filename}...")
+    # gdown handles Google Drive large file confirmation prompts
+    subprocess.run(["pip", "install", "gdown"], check=True)
+    subprocess.run(["gdown", url, "-O", dest], check=True)
+    logger.info(f"Downloaded {os.path.getsize(dest)} bytes")
+
+    if filename.endswith(".tar.xz"):
+        logger.info("Extracting tarball...")
+        subprocess.run(["tar", "xJf", dest, "-C", data_dir], check=True)
+        os.remove(dest)
+    elif filename.endswith(".xz"):
+        logger.info("Decompressing...")
+        subprocess.run(["xz", "-d", dest], check=True)
+
+    logger.info(f"{final} ready")
 
 def start_bot(bot_config: dict) -> subprocess.Popen:
     """
