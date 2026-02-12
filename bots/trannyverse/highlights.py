@@ -15,7 +15,7 @@ import interactions
 from interactions import Button, ButtonStyle, listen
 from interactions.api.events import MessageReactionAdd
 
-import analytics_db as db
+from common import db
 from common.consts import (
     excluded_highlight_channels,
     highlights_channel_id,

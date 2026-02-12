@@ -1,0 +1,15 @@
+# ======================================================================
+# Local GPU dependencies (NOT for Railway)
+#
+# Install after the base requirements:
+#   pip install -r requirements.txt
+#   pip install -r requirements-local.txt
+#
+# These need an NVIDIA GPU with CUDA. torch will automatically
+# pull in the correct nvidia-cuda-* packages as dependencies.
+# ======================================================================
+
+torch>=2.10
+transformers>=4.49
+clip-interrogator>=0.6
+easyocr>=1.7

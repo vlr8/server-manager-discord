@@ -1,8 +1,14 @@
 import json
 
-with open('discord/bad_words.json') as f:
-	bad_words = json.load(f)
-	bad_words = set(bad_words)
+BAD_WORDS_CRITICAL = [
+    # Slurs and hate speech
+    'chink','chinks', 'faggot','faggots', 'fag','fags',
+    'nigger','niggers','kike','kikes', 'spic', 'wetback','negroid',
+    'gook', 'coon', 'dyke','paki','nog','troon','troons',
+    # Violence keywords in threatening context
+    'kys', 'kill yourself', 'kill urself', 'kill all',
+    'death to','should die','rape you',
+]
 
 masked_chars = {
 	"a": ("a", "@", "*", "4"),
@@ -34,7 +40,7 @@ def contains_bad_word(string):
 		word = word.replace(char, masked_char_mapping.get(char, char))
 		# print("Replacing", char, "with", masked_char_mapping.get(char, char))
 	
-	for bad_word in bad_words:
+	for bad_word in BAD_WORDS_CRITICAL:
 		if bad_word in word:
 			return True
 	return False

@@ -47,6 +47,7 @@ import discord.profanity as profanity
 import discord.urban as urban
 import discord.yandex as yandex
 # for analytics and data exporting
+from common.db import insert_live_message
 from common import db
 from analytics_commands import *
 # for mass purging user messages
@@ -121,7 +122,7 @@ deathmatch_table = deathmatch_table_db.table('deathmatch')  # logging deathmatch
 spammers_table_tb = TinyDB('spammers_table_tb.json')
 spammers_table = spammers_table_tb.table('spammers')  # logging spammers
 
-# highlights_table and message_replies moved to SQLite via analytics_db module
+# highlights_table and message_replies moved to SQLite via db module
 
 male_prohibited_roles = [
     enbymoder_role, enby_role, lesbian_role, twinkhon_role, tranner_role, female_role, pooner_role
@@ -135,7 +136,7 @@ async def on_startup():
     logger.info(f"We're online!")
 
     # Initialize analytics database
-    analytics_db.init_database()
+    db.init_database()
     logger.info("Analytics database ready")
 
     # Set presence
@@ -2125,7 +2126,7 @@ async def on_message_create(ctx):
 
     # Store message to SQLite if not in excluded channels
     if ctx.message.channel.id not in excluded_highlight_channels:
-        analytics_db.insert_live_message({
+        db.insert_live_message({
             'message_id': ctx.message.id,
             'channel_id': ctx.message.channel.id,
             'author_id': ctx.message.author.id,
@@ -2334,7 +2335,7 @@ if __name__ == "__main__":
     signal.signal(signal.SIGINT, handle_shutdown)
 
     # Initialize database before starting
-    analytics_db.init_database()
+    db.init_database()
     logger.info("Database initialized")
 
     # Supervisor loop: restart on transient network failures

@@ -1616,17 +1616,13 @@ def run_cli_scan():
         print("⚠️  Database module not available - using JSON output only")
 
     # Import training samples if analytics DB exists
-    analytics_db = Path("discord_analytics.db")
-    if MDB_AVAILABLE and analytics_db.exists():
-        print(f"\n📚 Importing training samples from {analytics_db}...")
-        all_words = BAD_WORDS_CRITICAL + BAD_WORDS_MODERATE
-        try:
-            imported = mdb.import_training_samples_from_analytics(all_words)
-            print(f"   Imported {imported} training samples")
-        except Exception as e:
-            print(f"   Warning: Could not import training samples: {e}")
-    elif analytics_db.exists():
-        print(f"ℹ️  Found {analytics_db} but database module not available")
+    print(f"\n📚 Importing training samples from {mdb}...")
+    all_words = BAD_WORDS_CRITICAL + BAD_WORDS_MODERATE
+    try:
+        imported = mdb.import_training_samples_from_analytics(all_words)
+        print(f"   Imported {imported} training samples")
+    except Exception as e:
+        print(f"   Warning: Could not import training samples: {e}")
 
     print(f"\n🔍 Starting streaming scan...")
     print(f"   Export directory: {EXPORT_DIR}")

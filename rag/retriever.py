@@ -260,11 +260,11 @@ class MessageRetriever:
             try:
                 import sys
                 from pathlib import Path
-                # Ensure parent dir is on path for analytics_db import
+                # Ensure parent dir is on path for db import
                 parent = str(Path(__file__).parent.parent)
                 if parent not in sys.path:
                     sys.path.insert(0, parent)
-                from analytics_db import search_messages
+                from common.db import search_messages
 
                 raw = search_messages(query, limit=20)
 
