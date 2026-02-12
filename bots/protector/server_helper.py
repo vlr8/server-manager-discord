@@ -29,7 +29,7 @@ from typing import Optional, List, Dict, Tuple, Set
 from dataclasses import dataclass
 from dotenv import load_dotenv
 load_dotenv()
-PROTECTOR_BOT_TOKEN = os.environ["PROTECTOR_BOT_TOKEN"]
+PROTECTOR_BOT_TOKEN = os.environ['PROTECTOR_BOT_TOKEN']
 
 try:
     import ijson

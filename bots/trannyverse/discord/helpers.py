@@ -7,8 +7,8 @@ import datetime
 import random
 from dotenv import load_dotenv
 load_dotenv()
-SELF_TOKEN = os.environ["SELF_TOKEN"]
-BOT_TOKEN = os.environ["TRANNYVERSE_BOT_TOKEN"]
+SELF_TOKEN = os.environ['SELF_TOKEN']
+BOT_TOKEN = os.environ['TRANNYVERSE_BOT_TOKEN']
 
 headers = {
     'authorization': SELF_TOKEN,

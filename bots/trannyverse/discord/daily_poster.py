@@ -6,7 +6,7 @@ import requests
 import os
 from dotenv import load_dotenv
 load_dotenv()
-BOT_TOKEN = os.environ["TRANNYVERSE_BOT_TOKEN"]
+BOT_TOKEN = os.environ['TRANNYVERSE_BOT_TOKEN']
 
 def send_post(data):
     for channel_id in post_to_channels:

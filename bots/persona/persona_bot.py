@@ -23,8 +23,8 @@ from collections import deque
 from enum import Enum
 from dotenv import load_dotenv
 load_dotenv()
-PERSONA_BOT_TOKEN = os.environ["PERSONA_BOT_TOKEN"]
-ANTHROPIC_API_KEY = os.environ["ANTHROPIC_API_KEY"]
+PERSONA_BOT_TOKEN = os.environ['PERSONA_BOT_TOKEN']
+ANTHROPIC_API_KEY = os.environ['ANTHROPIC_API_KEY']
 
 import aiohttp
 import anthropic

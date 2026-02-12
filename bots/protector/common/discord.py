@@ -6,7 +6,7 @@ import time
 import os
 from dotenv import load_dotenv
 load_dotenv()
-BOT_TOKEN = os.environ["TRANNYVERSE_BOT_TOKEN"]
+BOT_TOKEN = os.environ['TRANNYVERSE_BOT_TOKEN']
 logger = logger.get_logger('discord')
 
 

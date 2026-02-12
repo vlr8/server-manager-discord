@@ -5,6 +5,6 @@
 # To run only specific bots, comment out the others.
 # Vision/CLIP features are disabled on Railway (no GPU).
 
-persona: python -m bots.persona.persona_bot
+# persona: python -m bots.persona.persona_bot
 trannyverse: python -m bots.trannyverse.bot1
 protector: python -m bots.protector.server_helper

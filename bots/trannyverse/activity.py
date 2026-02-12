@@ -8,7 +8,7 @@ from discord import helpers
 import os
 from dotenv import load_dotenv
 load_dotenv()
-BOT_TOKEN = os.environ["TRANNYVERSE_BOT_TOKEN"]
+BOT_TOKEN = os.environ['TRANNYVERSE_BOT_TOKEN']
 
 client = interactions.Client(token=BOT_TOKEN, default_scope=guild_id,
                              # intents=Intents.GUILDS | Intents.GUILD_MEMBERS | Intents.GUILD_MESSAGES | Intents.GUILD_MESSAGE_REACTIONS | Intents.MESSAGE_CONTENT | Intents.DIRECT_MESSAGES | Intents.DIRECT_MESSAGE_REACTIONS

@@ -15,7 +15,7 @@ import traceback
 import aiohttp
 from dotenv import load_dotenv
 load_dotenv()
-BOT_TOKEN = os.environ["TRANNYVERSE_BOT_TOKEN"]
+BOT_TOKEN = os.environ['TRANNYVERSE_BOT_TOKEN']
 
 # Third-party imports
 import emoji

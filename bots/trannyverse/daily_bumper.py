@@ -5,7 +5,7 @@ import discord.helpers as helpers
 import os
 from dotenv import load_dotenv
 load_dotenv()
-token = os.environ["SELF_TOKEN"]
+token = os.environ['SELF_TOKEN']
 
 def bump():
 	headers = {
