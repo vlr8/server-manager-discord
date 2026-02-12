@@ -41,11 +41,11 @@ from tinydb import Query, TinyDB, where
 # Local imports
 from common import utils
 from common.consts import *
-import discord.helpers as helpers
-import discord.oxford as oxford
-import discord.profanity as profanity
-import discord.urban as urban
-import discord.yandex as yandex
+import extensions.helpers as helpers
+import extensions.oxford as oxford
+import extensions.profanity as profanity
+import extensions.urban as urban
+import extensions.yandex as yandex
 # for analytics and data exporting
 from common.db import insert_live_message
 from common import db

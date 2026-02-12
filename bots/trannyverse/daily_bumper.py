@@ -1,7 +1,7 @@
 import time
 import common.consts as env
 import requests
-import discord.helpers as helpers
+import extensions.helpers as helpers
 import os
 from dotenv import load_dotenv
 load_dotenv()

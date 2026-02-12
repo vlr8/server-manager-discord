@@ -4,7 +4,7 @@ import json
 import interactions
 from interactions import Intents
 from common.consts import *
-from discord import helpers
+from extensions import helpers
 import os
 from dotenv import load_dotenv
 load_dotenv()
