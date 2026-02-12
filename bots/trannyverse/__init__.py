@@ -1,2 +1,2 @@
 import common
-import extensions
+from . import extensions

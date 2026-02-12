@@ -41,19 +41,19 @@ from tinydb import Query, TinyDB, where
 # Local imports
 from common import utils
 from common.consts import *
-import extensions.helpers as helpers
-import extensions.oxford as oxford
-import extensions.profanity as profanity
-import extensions.urban as urban
-import extensions.yandex as yandex
+from .extensions import helpers
+from .extensions import oxford
+from .extensions import profanity
+from .extensions import urban
+from .extensions import yandex
 # for analytics and data exporting
 from common.db import insert_live_message
 from common import db
-from analytics_commands import *
+from .analytics_commands import *
 # for mass purging user messages
-from purge_commands import *
+from .purge_commands import *
 # highlights system module
-import highlights
+from . import highlights
 
 # Configure logging
 logging.basicConfig(
