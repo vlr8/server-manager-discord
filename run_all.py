@@ -64,12 +64,22 @@ for env_key, (filename, needs_extract) in seeds.items():
     logger.info(f"Downloaded {os.path.getsize(dest)} bytes")
 
     if filename.endswith(".tar.xz"):
+        import tarfile
         logger.info("Extracting tarball...")
-        subprocess.run(["tar", "xJf", dest, "-C", data_dir], check=True)
+        with tarfile.open(dest, "r:xz") as tar:
+            tar.extractall(path=data_dir)
         os.remove(dest)
+        logger.info("Extraction complete")
     elif filename.endswith(".xz"):
+        import lzma
         logger.info("Decompressing...")
-        subprocess.run(["xz", "-d", dest], check=True)
+        out_path = dest.removesuffix(".xz")
+        with lzma.open(dest) as xz_file:
+            with open(out_path, "wb") as out_file:
+                while chunk := xz_file.read(8192):
+                    out_file.write(chunk)
+        os.remove(dest)
+        logger.info("Decompression complete")
 
     logger.info(f"{final} ready")
 
